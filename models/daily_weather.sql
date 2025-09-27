@@ -11,7 +11,7 @@ with daily_weather as (
 ),
  daily_weather_agg as (
     select 
-    date, 
+    dateadd(year, 5, date) as date, 
     weather,
     round(avg(temp),2) as temp,
     cast(round(avg(pressure)) as int) as pressue,

@@ -13,6 +13,6 @@ WITH CET AS (
     --   WHEN MONTH(TO_TIMESTAMP(STARTED_AT)) IN (9,10,11) THEN 'AUTUMN'
     --   END AS SEASON
     {{station_of_year('STARTED_AT')}} AS SEASON
-    FROM {{source('demo_source','BIKE_TABLE')}}
+    FROM {{ref('stg_bike')}}
 )
 SELECT * FROM CET

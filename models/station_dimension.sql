@@ -5,6 +5,6 @@ WITH bike AS (
       start_station_name as station_name,
       start_lat as station_lat,
       start_lng as station_lng
-    FROM {{source('demo_source','BIKE_TABLE')}}
+    FROM {{ref('stg_bike')}}
 )
 SELECT * FROM bike
